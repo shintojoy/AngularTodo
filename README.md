@@ -23,12 +23,14 @@
 
 5.Overwrite the staged changes with the committed version - git reset HEAD filename.extension.
 
-6.Overwrite the local with changes with the committed verions
+6.Overwrite the local with changes with the committed verions.
 	1. git reset HEAD filename.extension (unstage from commiited).
 	2. git checkout filename.extension (stage to local).
-7. Remove files 
-	1. Delete manually add using the "git add filename.extension or git add ." to stage the 			delete then "git commit -m "comment".
-	2. Use "git rm filename.extension" to remove locally and stage the deleted file in one 				command. Then "git commit -m "comment".
+7. Remove files. 
+	1. Delete manually add using the "git add filename.extension or git add ." to stage the delete then 
+		"git commit -m "comment".
+	2. Use "git rm filename.extension" to remove locally and stage the deleted file in one command. Then 
+		"git commit -m "comment".
 8. Use "git checkout filename.extension" and "git reset HEAD filename.extension" respectively to 		undo deletion.
 
 ## Roll back and branching
