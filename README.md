@@ -1,32 +1,69 @@
-# TodoApp
-# Angular 2 Tutorial: Create a CRUD App with Angular CLI
+# Github quick start
+## Information commands
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.28.3.
+1. "q" to exit "git log" screen.
 
-## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+2. "git status" check the status.
 
-## Code scaffolding
+3. "git log " to check the log.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
+4. "clear" to clear the screen.
 
-## Build
+5."git branch" or "git branch -a" to get all branches.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+## Staging, commit and delete
 
-## Running unit tests
+1. Initialize a directory using git init.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2. Add a file to staging using - git add filename.extension or git add .
 
-## Running end-to-end tests
+3.Commit staged changes using -git commit -m "comment".
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+4.Ovewrite the local changes with the staged files - git checkout filename.extension.
 
-## Deploying to GitHub Pages
+5.Overwrite the staged changes with the committed version - git reset HEAD filename.extension.
 
-Run `ng github-pages:deploy` to deploy to GitHub Pages.
+6.Overwrite the local with changes with the committed verions
+	1. git reset HEAD filename.extension (unstage from commiited).
+	2. git checkout filename.extension (stage to local).
+7. Remove files 
+	1. Delete manually add using the "git add filename.extension or git add ." to stage the 			delete then "git commit -m "comment".
+	2. Use "git rm filename.extension" to remove locally and stage the deleted file in one 				command. Then "git commit -m "comment".
+8. Use "git checkout filename.extension" and "git reset HEAD filename.extension" respectively to 		undo deletion.
 
-## Further help
+## Roll back and branching
 
-To get more help on the `angular-cli` use `ng help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+**In order to roll back to a previous version follow the below procedure**
+
+1. Issue "git log" and note the hash key represents the revison number.
+
+2. Then Issue a "git checkout hashkey". When you roll back to a previous revision, it will create a 	temp branch and you 	will be in that temp brach.
+3. If you wanted to switch to the orginal branch where the version before reviosn use the command 
+	"git checkout branch name(master)". You local directory will have all the changes prior to rollback. 
+4. After roll back, when you switch to the orginal branch from the temporary branch, git will provide the command 
+	"git branch <branch-name> hashkey" to create a new brach to store the rolled back changes. 
+5. You can switch between branches using "git checkout branchname".
+
+
+## Cloning from github
+
+1. get the url (https://github.com/planetoftheweb/angulardata.git) from github.com.
+
+2. Issue the command "git clone url(https://github.com/planetoftheweb/angulardata.git)".
+
+3. A repository with multiple branches will clone only the base repository (master) if you issue 	the above command.
+
+4. In order to get the individual branches under the main branch(master), issue the following command 
+	"git checkout -b localfoldername-inside-the-main-folder-name github branch name" (eg.git checkout -b 02-01 orgin/02-	01).
+
+5. In order to get all the branches under the master while cloning issue the following commands.
+	1. "git clone --mirror url-of-the-gitdirectory .git".
+	2. switch to the repository and issue the command "git config --bool core.bare false".
+	3. issue the command "git reset --hard", then check by issueing a "git branch" command.
+
+## Cloning and removing all git reference
+
+**Below steps helps us to create a brand new git repository from and existing branch**
+
+1. Issue "git clone -b github-branch-name  url-of-the-gitdirectory" 
+2. Remove all git references using "rm -dfr .git" (not a git command). Now the directory becomes a 		brand new directory can be added to github with usual git commands.
